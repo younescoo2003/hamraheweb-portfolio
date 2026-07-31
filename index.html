@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>همراه وب | همراه در طراحی، شریک در رشد</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            color: #1a2a3a;
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 50, 100, 0.1);
+            overflow: hidden;
+            padding: 30px 40px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 30px 0 20px;
+            border-bottom: 3px solid #87CEEB;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo-icon {
+            font-size: 3rem;
+            background: #87CEEB;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(135, 206, 235, 0.3);
+        }
+
+        .logo-text h1 {
+            font-size: 2.8rem;
+            color: #1a3a5a;
+            letter-spacing: 1px;
+        }
+
+        .logo-text h1 span {
+            color: #4A90D9;
+        }
+
+        .slogan {
+            font-size: 1.3rem;
+            color: #2c5a7a;
+            background: #e6f4fa;
+            display: inline-block;
+            padding: 8px 30px;
+            border-radius: 30px;
+            margin-top: 10px;
+            font-weight: 500;
+            border: 1px solid #87CEEB;
+        }
+
+        /* About Section */
+        .about {
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px dashed #cce7f5;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            color: #1a3a5a;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto 15px;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .team-badge {
+            display: inline-block;
+            background: #87CEEB;
+            color: white;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-top: 10px;
+            box-shadow: 0 2px 8px rgba(135, 206, 235, 0.4);
+        }
+
+        /* Projects Grid */
+        .projects {
+            padding: 40px 0;
+        }
+
+        .projects h2 {
+            font-size: 2rem;
+            text-align: center;
+            color: #1a3a5a;
+            margin-bottom: 30px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #f8fcff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e0f0f8;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(74, 144, 217, 0.15);
+            border-color: #87CEEB;
+        }
+
+        .project-image {
+            height: 200px;
+            background-color: #cce7f5;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Fallback style for projects without image */
+        .project-image.no-image {
+            background: linear-gradient(145deg, #e6f4fa, #cce7f5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #4A90D9;
+            font-weight: bold;
+        }
+
+        .project-tag {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(26, 58, 90, 0.85);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .project-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            color: #1a3a5a;
+            margin-bottom: 5px;
+        }
+
+        .project-location {
+            color: #4A90D9;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #3a4a5a;
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            background: #87CEEB;
+            color: #1a3a5a;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: 0.3s;
+            align-self: flex-start;
+        }
+
+        .project-link:hover {
+            background: #4A90D9;
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #e6f4fa;
+            padding: 40px 20px;
+            border-radius: 16px;
+            margin-top: 40px;
+            border: 1px solid #87CEEB;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            color: #1a3a5a;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 15px 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+        }
+
+        .contact-item .label {
+            font-size: 0.8rem;
+            color: #5a7a8a;
+            display: block;
+        }
+
+        .contact-item .value {
+            font-weight: 600;
+            color: #1a3a5a;
+            text-decoration: none;
+            display: block;
+            margin-top: 5px;
+            word-break: break-word;
+        }
+
+        .contact-item .value a {
+            color: #1a3a5a;
+            text-decoration: none;
+        }
+
+        .contact-item .value a:hover {
+            color: #4A90D9;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 25px 0 10px;
+            border-top: 2px solid #cce7f5;
+            margin-top: 40px;
+            color: #5a7a8a;
+        }
+
+        .footer .slogan-footer {
+            font-size: 1.1rem;
+            color: #1a3a5a;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .logo-text h1 {
+                font-size: 2rem;
+            }
+            .slogan {
+                font-size: 1rem;
+                padding: 6px 20px;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">HW</div>
+                <div class="logo-text">
+                    <h1>همراه <span>وب</span></h1>
+                </div>
+            </div>
+            <div class="slogan">همراه در طراحی، شریک در رشد</div>
+        </header>
+
+        <!-- About -->
+        <section class="about">
+            <h2>🧠 درباره‌ی ما</h2>
+            <p>
+                تیم <strong>همراه وب</strong> متشکل از ۶ نفر متخصص در حوزه‌های طراحی وب، برنامه‌نویسی، سئو و پشتیبانی فنی است. 
+                ما باور داریم که یک وب‌سایت موفق، فقط به طراحی زیبا ختم نمی‌شود؛ بلکه نیازمند همراهی مستمر، رشد و بهبود دائمی است. 
+                به همین دلیل، پس از هر پروژه، جزئی از تیم شما می‌شویم و در تمام مراحل، از ایده تا اوج، در کنارتان هستیم.
+            </p>
+            <div class="team-badge">🌟 تیمی از ۶ متخصص متعهد</div>
+        </section>
+
+        <!-- Projects -->
+        <section class="projects">
+            <h2>🚀 نمونه‌کارهای ما</h2>
+            <div class="project-grid">
+
+                <!-- Project 1: Farahooosh (with images) -->
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('assets/farahooosh/desktop.jpg');">
+                        <span class="project-tag">آموزشی</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>آموزشگاه تیزهوشان فراهوش</h3>
+                        <div class="project-location">📍 تهران</div>
+                        <p>بازطراحی کامل، سئوی تخصصی و افزایش ۱۰ برابری بازدید در یک سال. پشتیبانی و مشاوره‌ی مستمر.</p>
+                        <a href="https://farahooosh.com/" target="_blank" class="project-link">مشاهده سایت</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Ashiiyan (with images) -->
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('assets/ashiiyan/desktop.jpg');">
+                        <span class="project-tag">برندینگ</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>کلینیک روانشناسی آشیان</h3>
+                        <div class="project-location">📍 تهران</div>
+                        <p>خلق هویت بصری از صفر، طراحی رابط کاربری، سیستم رزرو نوبت و مشاوره‌ی فروش.</p>
+                        <a href="https://ashiiyan.com/" target="_blank" class="project-link">مشاهده سایت</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Vestige (without image) -->
+                <div class="project-card">
+                    <div class="project-image no-image">
+                        <span>🛍️</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>بوتیک مردانه وستیج</h3>
+                        <div class="project-location">📍 مشهد</div>
+                        <p>طراحی فروشگاه با ووکامرس، مسیر خرید فوق‌سریع، اتصال به ترب و ایمالز برای افزایش فروش.</p>
+                        <a href="https://vestigewear.ir/" target="_blank" class="project-link">مشاهده سایت</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Zarvan (without image) -->
+                <div class="project-card">
+                    <div class="project-image no-image">
+                        <span>🎓</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>آکادمی روانشناسی زروان</h3>
+                        <div class="project-location">📍 شیراز</div>
+                        <p>پیاده‌سازی سیستم LMS، فروشگاه کتاب با ووکامرس و سیستم مدرک‌دهی و سرتیفیکیت.</p>
+                        <a href="https://zarvanacademy.com/" target="_blank" class="project-link">مشاهده سایت</a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Farshchiii (without image) -->
+                <div class="project-card">
+                    <div class="project-image no-image">
+                        <span>👨‍🏫</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>دکتر محمدامین فرشچی (آیلتس)</h3>
+                        <div class="project-location">📍 مشهد</div>
+                        <p>بازطراحی اصولی و ۶ ماه پشتیبانی فنی کامل برای وب‌سایت شخصی مدرس آیلتس.</p>
+                        <a href="http://farshchiii.net/" target="_blank" class="project-link">مشاهده سایت</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact">
+            <h2>📬 با ما در تماس باشید</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="label">📞 تلفن</span>
+                    <span class="value">۰۹۹۰۴۱۱۶۳۰۸</span>
+                    <span class="value">۰۹۰۲۳۳۴۶۳۰۸</span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">✉️ ایمیل</span>
+                    <span class="value"><a href="mailto:younesqa8@gmail.com">younesqa8@gmail.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">📷 اینستاگرام</span>
+                    <span class="value"><a href="https://www.instagram.com/hamraheweb" target="_blank">@hamraheweb</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">📱 پشتیبانی تلگرام</span>
+                    <span class="value"><a href="https://t.me/Hamraheweb_support" target="_blank">@Hamraheweb_support</a></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="slogan-footer">همراه وب؛ همراه در طراحی، شریک در رشد</div>
+            <p style="margin-top: 10px; font-size: 0.9rem;">© ۱۴۰۴ تمامی حقوق برای تیم همراه وب محفوظ است.</p>
+        </footer>
+    </div>
+</body>
+</html>
